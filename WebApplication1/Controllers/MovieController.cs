@@ -12,6 +12,8 @@ namespace WebApplication1.Controllers
         // GET: Movie
         public ActionResult Index()
         {
+            ViewBag.Movies = DbContext.Movies.ToList();
+            
             return View();
         }
         [HttpGet]
@@ -28,7 +30,7 @@ namespace WebApplication1.Controllers
             }
             DbContext.Movies.Add(model);
             DbContext.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index");
         }
         
 

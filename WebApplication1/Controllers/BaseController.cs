@@ -11,7 +11,7 @@ namespace WebApplication1.Controllers
     {
 
         public ApplicationDbContext DbContext => HttpContext.GetOwinContext().Get<ApplicationDbContext>();
-
-
+        public ApplicationSignInManager SignInManager => HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+        public ApplicationUserManager UserManager => HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
     }
 }
