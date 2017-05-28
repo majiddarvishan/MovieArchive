@@ -12,6 +12,7 @@
         <div class="panel-body">
             @using (Html.BeginForm("AddMovie", "Movie", FormMethod.Post, new { role = "form" }))
             { 
+                @Html.AntiForgeryToken()
                 <div class="form-group">
                     @Html.LabelFor(m => m.Name, "Movie Name")
                     @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
